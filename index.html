@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>🎂 Feliz Aniversário Jú</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+      background: linear-gradient(180deg, #000, #2f1b0c);
+      animation: fadeInDown 2s ease;
+    }
+
+    header h1 {
+      font-size: 3em;
+      color: #d4a373;
+      margin-bottom: 10px;
+      animation: pulse 3s infinite;
+    }
+
+    header p {
+      font-size: 1.3em;
+      color: #e0c097;
+      max-width: 700px;
+      margin: auto;
+      animation: fadeInUp 2.5s ease;
+    }
+
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      max-width: 800px;
+      margin: 60px auto;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      animation: slide 16s infinite;
+    }
+
+    .carousel img {
+      width: 100%;
+      object-fit: cover;
+      max-height: 500px;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #2f1b0c;
+      color: #d4a373;
+      font-size: 1.1em;
+      animation: fadeIn 3s ease;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      25% { transform: translateX(-100%); }
+      50% { transform: translateX(-200%); }
+      75% { transform: translateX(-300%); }
+      100% { transform: translateX(0%); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎉 Feliz Aniversário, Jú!</h1>
+    <p>
+      Neste dia tão especial, celebramos a luz que você espalha por onde passa.<br>
+      Que a vida te envolva com amor, sonhos realizados, e momentos que façam teu coração dançar.<br>
+      Obrigado por existir, Jú Kalandula. Você é uma estrela única!
+    </p>
+  </header>
+
+  <section class="carousel">
+    <div class="carousel-track">
+      <img src="foto1.jpg" alt="Foto 1 da Jú">
+      <img src="foto2.jpg" alt="Foto 2 da Jú">
+      <img src="foto3.jpg" alt="Foto 3 da Jú">
+      <img src="foto4.jpg" alt="Foto 4 da Jú">
+    </div>
+  </section>
+
+  <footer>
+    Com carinho, Leonardo 💖<br>
+    09 de Abril - Uma data pra sempre ser celebrada.
+  </footer>
+
+</body>
+</html>
