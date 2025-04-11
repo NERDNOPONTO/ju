@@ -10,16 +10,16 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #000;
+            background: #000;
             color: #fff;
             height: 100vh;
             overflow: hidden;
             touch-action: manipulation;
         }
-        
+
         .tiktok-container {
             position: relative;
             width: 100%;
@@ -27,290 +27,212 @@
             max-width: 375px;
             margin: 0 auto;
             overflow: hidden;
-            background-color: #000;
+            background: #000;
         }
-        
-        .video-container {
+
+        .photo-slider {
             position: relative;
             width: 100%;
             height: 100%;
+            overflow: hidden;
         }
-        
-        .video-frame {
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            animation: slideShow 20s infinite;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide:nth-child(1) { background-image: url('ju1.jpg'); animation-delay: 0s; }
+        .slide:nth-child(2) { background-image: url('ju2.jpg'); animation-delay: 5s; }
+        .slide:nth-child(3) { background-image: url('ju3.jpg'); animation-delay: 10s; }
+        .slide:nth-child(4) { background-image: url('ju4.jpg'); animation-delay: 15s; }
+
+        @keyframes slideShow {
+            0%, 25% { opacity: 1; transform: scale(1); }
+            30%, 100% { opacity: 0; transform: scale(1.1); }
+        }
+
+        .color-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                rgba(92, 45, 145, 0.4),
+                rgba(177, 58, 141, 0.4),
+                rgba(227, 107, 107, 0.4));
+            animation: colorChange 15s infinite;
+            mix-blend-mode: multiply;
+        }
+
+        @keyframes colorChange {
+            0% { background-color: rgba(92, 45, 145, 0.4); }
+            33% { background-color: rgba(177, 58, 141, 0.4); }
+            66% { background-color: rgba(227, 107, 107, 0.4); }
+            100% { background-color: rgba(92, 45, 145, 0.4); }
+        }
+
+        .birthday-content {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            z-index: 1;
-        }
-        
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%);
             z-index: 2;
         }
-        
-        .birthday-message {
+
+        .header {
+            text-align: center;
+            padding: 2rem;
+            animation: headerEntrance 1s ease-out;
+        }
+
+        @keyframes headerEntrance {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            50% { text-shadow: 0 0 20px rgba(255,255,255,0.7), 2px 2px 4px rgba(0,0,0,0.5); }
+        }
+
+        .interactive-area {
             position: absolute;
             bottom: 100px;
             left: 20px;
-            z-index: 3;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-            max-width: 80%;
+            right: 20px;
         }
-        
-        .birthday-message h1 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            animation: pulse 2s infinite;
+
+        .message-box {
+            background: rgba(0,0,0,0.5);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            animation: messageFloat 4s ease-in-out infinite;
         }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+
+        @keyframes messageFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
-        
-        .birthday-message p {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            line-height: 1.4;
-        }
-        
+
         .heart-btn {
             position: absolute;
             right: 20px;
             bottom: 100px;
-            z-index: 3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .heart-icon {
-            font-size: 2.5rem;
-            color: #fff;
-            text-shadow: 0 0 10px rgba(255,0,0,0.7);
-            margin-bottom: 5px;
+            font-size: 3rem;
             cursor: pointer;
-            transition: transform 0.3s;
-            animation: float 3s ease-in-out infinite;
+            animation: heartbeat 1.5s infinite;
         }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .heart-count {
-            color: #fff;
-            font-size: 0.9rem;
-        }
-        
-        .confetti {
+
+        .photo-frame {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #f00;
-            opacity: 0;
-            pointer-events: none;
-            z-index: 4;
-        }
-        
-        .date-signature {
-            position: absolute;
-            bottom: 30px;
-            left: 20px;
-            z-index: 3;
-            font-family: 'Brush Script MT', cursive;
-            font-size: 1.5rem;
-            color: #f8d7da;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        
-        .video-controls {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            z-index: 3;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .control-btn {
-            background: rgba(255,255,255,0.2);
-            border: none;
+            width: 120px;
+            height: 120px;
+            border: 3px solid #fff;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-            backdrop-filter: blur(5px);
-        }
-        
-        .video-progress {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            right: 10px;
-            height: 3px;
-            background: rgba(255,255,255,0.3);
-            border-radius: 3px;
-            z-index: 3;
             overflow: hidden;
+            animation: rotateFrame 20s linear infinite;
         }
-        
-        .progress-bar {
-            height: 100%;
-            width: 0%;
-            background: #fe2c55;
-            animation: progress 15s linear infinite;
+
+        @keyframes rotateFrame {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
-        
-        @keyframes progress {
-            0% { width: 0%; }
-            100% { width: 100%; }
+
+        .secret-message {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
-        
-        .touch-message {
-            position: absolute;
-            pointer-events: none;
-            color: #fff;
-            font-weight: bold;
-            text-shadow: 0 0 5px rgba(0,0,0,0.8);
-            z-index: 5;
-            animation: floatUp 2s forwards;
-        }
-        
-        @keyframes floatUp {
-            0% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(-100px) scale(1.5);
-            }
+
+        .photo-slider:hover .secret-message {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
     <div class="tiktok-container">
-        <div class="video-container">
-            <!-- Substitua pelo vídeo real da Jú -->
-            <video class="video-frame" autoplay loop muted>
-                <source src="ju-birthday-video.mp4" type="video/mp4">
-                Seu navegador não suporta vídeos HTML5
-            </video>
-            <div class="overlay"></div>
+        <div class="photo-slider">
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="color-overlay"></div>
             
-            <div class="birthday-message">
-                <h1>Feliz Aniversário, Jú! 🎉</h1>
-                <p>Que seu dia seja tão incrível quanto você é!</p>
-                <p>Te amo mais que tudo! ❤️</p>
-            </div>
-            
-            <div class="heart-btn">
-                <div class="heart-icon" id="heart-btn">❤️</div>
-                <div class="heart-count" id="heart-count">0</div>
-            </div>
-            
-            <div class="date-signature">
-                9 de Abril<br>
-                Com amor
-            </div>
-            
-            <div class="video-controls">
-                <button class="control-btn">🔊</button>
-                <button class="control-btn">💬</button>
-                <button class="control-btn">↗️</button>
-            </div>
-            
-            <div class="video-progress">
-                <div class="progress-bar"></div>
+            <div class="birthday-content">
+                <header class="header">
+                    <h1>Feliz Aniversário Jú! 🎂</h1>
+                </header>
+
+                <div class="interactive-area">
+                    <div class="message-box">
+                        <p>Jú, cada dia ao seu lado é uma bênção! Que este novo ano traga toda felicidade que você merece! 💖</p>
+                    </div>
+                    
+                    <div class="heart-btn">❤️</div>
+                    
+                    <div class="photo-frame">
+                        <img src="ju1.jpg" alt="Jú" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                </div>
+
+                <div class="secret-message">
+                    9 de Abril - Dia Mais Especial do Mundo 🌟
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Interatividade básica (opcional)
         document.addEventListener('DOMContentLoaded', function() {
-            const heartBtn = document.getElementById('heart-btn');
-            const heartCount = document.getElementById('heart-count');
-            const container = document.querySelector('.tiktok-container');
-            let count = 0;
-            const messages = [
-                "Linda!",
-                "Perfeita!",
-                "Maravilhosa!",
-                "Te amo!",
-                "Rainha!",
-                "Divina!",
-                "Especial!",
-                "Única!"
-            ];
+            const heartBtn = document.querySelector('.heart-btn');
+            const photos = document.querySelectorAll('.slide');
             
-            // Efeito de coração
+            // Efeito de coração pulsante
             heartBtn.addEventListener('click', function() {
-                count++;
-                heartCount.textContent = count;
-                
-                // Efeito visual
-                heartBtn.style.transform = 'scale(1.5)';
+                this.style.transform = 'scale(1.5)';
                 setTimeout(() => {
-                    heartBtn.style.transform = 'scale(1)';
+                    this.style.transform = 'scale(1)';
                 }, 300);
                 
-                // Cria confetes
-                createConfetti();
+                createHearts();
             });
-            
-            // Efeito de toque na tela
-            container.addEventListener('click', function(e) {
-                if(e.target === heartBtn) return;
+
+            // Efeito de hover nas fotos
+            photos.forEach(photo => {
+                photo.addEventListener('mouseover', () => {
+                    photo.style.transform = 'scale(1.05)';
+                });
                 
-                const message = messages[Math.floor(Math.random() * messages.length)];
-                createTouchMessage(e.clientX, e.clientY, message);
+                photo.addEventListener('mouseout', () => {
+                    photo.style.transform = 'scale(1)';
+                });
             });
-            
-            function createTouchMessage(x, y, text) {
-                const msg = document.createElement('div');
-                msg.className = 'touch-message';
-                msg.textContent = text;
-                msg.style.left = (x - 30) + 'px';
-                msg.style.top = (y - 30) + 'px';
-                container.appendChild(msg);
-                
-                setTimeout(() => {
-                    msg.remove();
-                }, 2000);
-            }
-            
-            function createConfetti() {
-                for(let i = 0; i < 30; i++) {
-                    const confetti = document.createElement('div');
-                    confetti.className = 'confetti';
-                    confetti.style.left = Math.random() * 100 + 'vw';
-                    confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-                    confetti.style.width = (Math.random() * 10 + 5) + 'px';
-                    confetti.style.height = (Math.random() * 10 + 5) + 'px';
-                    confetti.style.animation = `confettiFall ${Math.random() * 2 + 1}s linear forwards`;
-                    document.body.appendChild(confetti);
+
+            function createHearts() {
+                for(let i = 0; i < 10; i++) {
+                    const heart = document.createElement('div');
+                    heart.style.position = 'absolute';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animation = `floatUp ${Math.random() * 2 + 1}s linear`;
+                    heart.innerHTML = '💖';
+                    document.body.appendChild(heart);
                     
-                    setTimeout(() => {
-                        confetti.remove();
-                    }, 3000);
+                    setTimeout(() => heart.remove(), 2000);
                 }
             }
         });
