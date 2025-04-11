@@ -264,24 +264,5 @@ Se quiser, posso adaptar a mensagem para caber perfeitamente em uma animação o
 
 
 
-    <script>
-    fetch('contador.php')
-        .then(response => response.text())
-        .then(data => {
-            const contador = document.createElement('div');
-            contador.innerText = `👀 Visualizações: ${data}`;
-            contador.style.position = 'fixed';
-            contador.style.top = '10px';
-            contador.style.right = '10px';
-            contador.style.background = 'rgba(0,0,0,0.5)';
-            contador.style.padding = '5px 10px';
-            contador.style.borderRadius = '10px';
-            contador.style.fontSize = '14px';
-            contador.style.color = '#fff';
-            contador.style.zIndex = '9999';
-            document.body.appendChild(contador);
-        });
-</script>
-
 </body>
 </html>
