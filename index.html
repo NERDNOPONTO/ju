@@ -4,35 +4,46 @@
   <meta charset="UTF-8">
   <title>🎂 Feliz Aniversário Jú</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&display=swap');
+
     body {
       margin: 0;
       padding: 0;
       background: #000;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Quicksand', sans-serif;
       color: #fff;
       overflow-x: hidden;
+      background-image: radial-gradient(#6a4e3b 0.5px, transparent 0.5px);
+      background-size: 20px 20px;
     }
 
     header {
       text-align: center;
-      padding: 60px 20px 20px;
+      padding: 60px 20px 30px;
       background: linear-gradient(180deg, #000, #2f1b0c);
       animation: fadeInDown 2s ease;
     }
 
     header h1 {
       font-size: 3em;
-      color: #d4a373;
-      margin-bottom: 10px;
+      color: #ffc0cb;
+      font-family: 'Great Vibes', cursive;
       animation: pulse 3s infinite;
     }
 
     header p {
-      font-size: 1.3em;
-      color: #e0c097;
+      font-size: 1.2em;
+      color: #f4d6c3;
       max-width: 700px;
       margin: auto;
       animation: fadeInUp 2.5s ease;
+      line-height: 1.8em;
+    }
+
+    .heart {
+      font-size: 2.5em;
+      color: #ff5e78;
+      animation: heartbeat 1.5s infinite;
     }
 
     .carousel {
@@ -42,7 +53,7 @@
       max-width: 800px;
       margin: 60px auto;
       border-radius: 20px;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 30px rgba(255, 192, 203, 0.3);
       position: relative;
     }
 
@@ -64,11 +75,12 @@
 
     footer {
       text-align: center;
-      padding: 30px 20px;
+      padding: 40px 20px;
       background-color: #2f1b0c;
-      color: #d4a373;
+      color: #f7c4a5;
       font-size: 1.1em;
       animation: fadeIn 3s ease;
+      font-family: 'Great Vibes', cursive;
     }
 
     @keyframes slide {
@@ -98,16 +110,25 @@
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.05); }
     }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.2); }
+      50% { transform: scale(1.4); }
+      75% { transform: scale(1.2); }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>🎉 Feliz Aniversário, Jú!</h1>
+    <div class="heart">❤️</div>
+    <h1>Feliz Aniversário, Jú!</h1>
     <p>
-      Neste dia tão especial, celebramos a luz que você espalha por onde passa.<br>
-      Que a vida te envolva com amor, sonhos realizados, e momentos que façam teu coração dançar.<br>
-      Obrigado por existir, Jú Kalandula. Você é uma estrela única!
+      Neste dia mágico, celebramos a beleza da tua existência,<br>
+      a doçura do teu sorriso e a força suave da tua alma.<br>
+      Que os teus sonhos floresçam como as estrelas que brilham só por ti.<br>
+      Você é poesia em forma de gente, Jú Kalandula. ✨
     </p>
   </header>
 
@@ -121,8 +142,9 @@
   </section>
 
   <footer>
-    Com carinho, Leonardo 💖<br>
-    09 de Abril - Uma data pra sempre ser celebrada.
+    Com amor e admiração,<br>
+    Leonardo 🌹<br>
+    09 de Abril — Um dia pra guardar no coração.
   </footer>
 
 </body>
