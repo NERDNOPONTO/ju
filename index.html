@@ -9,40 +9,50 @@
     body {
       margin: 0;
       padding: 0;
-      background: #000;
       font-family: 'Quicksand', sans-serif;
-      color: #fff;
       overflow-x: hidden;
-      background-image: radial-gradient(#6a4e3b 0.5px, transparent 0.5px);
-      background-size: 20px 20px;
+      animation: backgroundCycle 30s infinite linear;
+      background-size: 400% 400%;
+      color: #fff;
+      text-shadow: 1px 1px 4px #00000070;
+    }
+
+    @keyframes backgroundCycle {
+      0% { background: linear-gradient(-45deg, #c71585, #800080, #8a2be2, #4b0082); }
+      25% { background: linear-gradient(-45deg, #db7093, #9932cc, #ba55d3, #5d3fd3); }
+      50% { background: linear-gradient(-45deg, #a0522d, #ff69b4, #9370db, #6a5acd); }
+      75% { background: linear-gradient(-45deg, #8b008b, #e75480, #dda0dd, #483d8b); }
+      100% { background: linear-gradient(-45deg, #c71585, #800080, #8a2be2, #4b0082); }
     }
 
     header {
       text-align: center;
       padding: 60px 20px 30px;
-      background: linear-gradient(180deg, #000, #2f1b0c);
       animation: fadeInDown 2s ease;
     }
 
     header h1 {
-      font-size: 3em;
-      color: #ffc0cb;
+      font-size: 3.5em;
       font-family: 'Great Vibes', cursive;
       animation: pulse 3s infinite;
+      color: #ffeaff;
     }
 
     header p {
       font-size: 1.2em;
-      color: #f4d6c3;
       max-width: 700px;
       margin: auto;
       animation: fadeInUp 2.5s ease;
       line-height: 1.8em;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      border-radius: 15px;
+      backdrop-filter: blur(4px);
     }
 
     .heart {
       font-size: 2.5em;
-      color: #ff5e78;
+      color: #ff69b4;
       animation: heartbeat 1.5s infinite;
     }
 
@@ -53,7 +63,7 @@
       max-width: 800px;
       margin: 60px auto;
       border-radius: 20px;
-      box-shadow: 0 0 30px rgba(255, 192, 203, 0.3);
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.3);
       position: relative;
     }
 
@@ -76,11 +86,10 @@
     footer {
       text-align: center;
       padding: 40px 20px;
-      background-color: #2f1b0c;
-      color: #f7c4a5;
-      font-size: 1.1em;
-      animation: fadeIn 3s ease;
+      font-size: 1.2em;
       font-family: 'Great Vibes', cursive;
+      animation: fadeIn 3s ease;
+      color: #ffeaff;
     }
 
     @keyframes slide {
@@ -122,13 +131,12 @@
 <body>
 
   <header>
-    <div class="heart">❤️</div>
+    <div class="heart">💖</div>
     <h1>Feliz Aniversário, Jú!</h1>
     <p>
-      Neste dia mágico, celebramos a beleza da tua existência,<br>
-      a doçura do teu sorriso e a força suave da tua alma.<br>
-      Que os teus sonhos floresçam como as estrelas que brilham só por ti.<br>
-      Você é poesia em forma de gente, Jú Kalandula. ✨
+      Hoje o mundo ficou mais bonito, porque uma alma cheia de luz nasceu.<br>
+      Que teus dias sejam repletos de magia, amor, abraços sinceros e motivos para sorrir.<br>
+      Jú Kalandula, tua presença é presente para todos nós. 🌸
     </p>
   </header>
 
@@ -142,9 +150,9 @@
   </section>
 
   <footer>
-    Com amor e admiração,<br>
-    Leonardo 🌹<br>
-    09 de Abril — Um dia pra guardar no coração.
+    Com carinho,<br>
+    Leonardo 🌷<br>
+    09 de Abril — Um dia que floresce só pra você.
   </footer>
 
 </body>
